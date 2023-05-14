@@ -1,0 +1,2 @@
+C:\Home\Svn\Labore\trunk\Lab_BV\Versuch1\SplitAndMerge_ML\x64\Debug\SplitAndMerge.exe
+C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMerge\x64\Debug\SplitAndMerge.exe

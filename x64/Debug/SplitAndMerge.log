@@ -1,0 +1,15 @@
+﻿  Image.cpp
+  ImageBaseProcessing.cpp
+  ImagePreProcessing.cpp
+  ImageProcessing.cpp
+C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMerge\ImageProcessing\ImageProcessing.cpp(48,17): warning C4101: "splitOp": Unreferenzierte lokale Variable
+  ImageWindow.cpp
+  main.cpp
+  MergedRegion.cpp
+C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMerge\ImageProcessing\MergedRegion.cpp(44,21): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+  MergeOperation.cpp
+  Point.cpp
+  Region.cpp
+  Splitoperation.cpp
+  Code wird generiert...
+  SplitAndMerge.vcxproj -> C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMerge\x64\Debug\SplitAndMerge.exe
