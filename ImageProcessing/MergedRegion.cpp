@@ -1,12 +1,12 @@
 #include "MergedRegion.h"
+#include "Region.h"
 
 MergedRegion::MergedRegion(int mergedRegionIdent)
 {
-	int i = 1;
-
 	if (mergedRegionIdent == 0)
 	{
-		mergedRegionIdent = i++;
+		static int id = 1;
+		mergedRegionIdent = id++;
 	}
 	this->regionIdent = mergedRegionIdent;
 }
@@ -17,17 +17,19 @@ void MergedRegion::AddRegion(Region* region)
 }
 
 
-//void MergedRegion::AddMergedRegion(MergedRegion* mergedRegion)
-//{
-//	Region* firstRegion = mergedRegion->subregions.front();
-//	if (firstRegion->RegionId() != regionId)
-//	{
-//		for (Region* r : mergedRegion->subregions)
-//			r->SetRegionId(regionId);
-//	}
-//
-//	subregions.splice(subregions.end(), mergedRegion->subregions);
-//}
+void MergedRegion::AddMergedRegion(MergedRegion* mergedRegion)
+{
+	Region* firstRegion = mergedRegion->subregions.front();
+	if (firstRegion->regionID() != regionIdent)
+	{
+		for (Region* r : mergedRegion->subregions)
+			r->setRegionID(regionIdent);
+	}
+
+	subregions.splice(subregions.end(), mergedRegion->subregions);
+}
+
+
 
 void MergedRegion::Remove(Region* region)
 {

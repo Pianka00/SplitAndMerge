@@ -86,14 +86,33 @@ void ImageProcessing::SplitAndMerge(int minsize, double splitThreshold, double m
 
 
 	/***** Merge durchführen *****/
-	
+	MergeOperation merging;
+
 	for (Region* fristRegion : regionQueue)
 	{
 		for (Region* neighborRegion : regionQueue)
 		{
-			MergeOperation::Merge(fristRegion, neighborRegion, mergeThreshold);
+			merging.Merge(fristRegion, neighborRegion, mergeThreshold);
 		}
 	}
+
+	Image mergeMaskColor(rawImage.Rows(), rawImage.Cols(), true); //farbiges Bild daher true
+	merging.Fill(&mergeMaskColor);
+	Image mergeMask(rawImage.Rows(), rawImage.Cols());
+	merging.Fill(&mergeMask);
+
+	//nicht-gemergeten Regionen 
+	for (Region* region : regionQueue)
+	{
+		if (region->regionID() == 0)
+		{
+			region->Coloring(&mergeMaskColor);
+			region->Coloring(&mergeMask);
+		}
+	}
+
+	ShowImage("Merge Colored", mergeMaskColor);
+	ShowImage("Merge", mergeMask);
 
 
 

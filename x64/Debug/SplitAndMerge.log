@@ -1,15 +1,19 @@
-﻿  Image.cpp
-  ImageBaseProcessing.cpp
-  ImagePreProcessing.cpp
-  ImageProcessing.cpp
-C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMerge\ImageProcessing\ImageProcessing.cpp(48,17): warning C4101: "splitOp": Unreferenzierte lokale Variable
-  ImageWindow.cpp
-  main.cpp
-  MergedRegion.cpp
-C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMerge\ImageProcessing\MergedRegion.cpp(44,21): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
-  MergeOperation.cpp
+﻿  MergeOperation.cpp
+C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMergeWithGit\SplitAndMerge\ImageProcessing\MergeOperation.cpp(20,38): error C2597: Ungültiger Verweis auf nicht-statischen Member "MergeOperation::merges"
+C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMergeWithGit\SplitAndMerge\ImageProcessing\MergeOperation.cpp(20,38): error C3867: "MergeOperation::merges": Keine Standardsyntax; "&" zum Erstellen eines Verweises auf das Member verwenden
+C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMergeWithGit\SplitAndMerge\ImageProcessing\MergeOperation.cpp(20,38): error C2568: "[": Auflösung der Funktionsüberladung nicht möglich
+C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMergeWithGit\SplitAndMerge\ImageProcessing\MergeOperation.cpp(26,54): error C2597: Ungültiger Verweis auf nicht-statischen Member "MergeOperation::merges"
+C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMergeWithGit\SplitAndMerge\ImageProcessing\MergeOperation.cpp(26,54): error C3867: "MergeOperation::merges": Keine Standardsyntax; "&" zum Erstellen eines Verweises auf das Member verwenden
+C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMergeWithGit\SplitAndMerge\ImageProcessing\MergeOperation.cpp(26,54): error C2568: "[": Auflösung der Funktionsüberladung nicht möglich
+C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMergeWithGit\SplitAndMerge\ImageProcessing\MergeOperation.cpp(32,51): error C2597: Ungültiger Verweis auf nicht-statischen Member "MergeOperation::merges"
+C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMergeWithGit\SplitAndMerge\ImageProcessing\MergeOperation.cpp(32,51): error C3867: "MergeOperation::merges": Keine Standardsyntax; "&" zum Erstellen eines Verweises auf das Member verwenden
+C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMergeWithGit\SplitAndMerge\ImageProcessing\MergeOperation.cpp(32,51): error C2568: "[": Auflösung der Funktionsüberladung nicht möglich
+C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMergeWithGit\SplitAndMerge\ImageProcessing\MergeOperation.cpp(42,52): error C2597: Ungültiger Verweis auf nicht-statischen Member "MergeOperation::merges"
+C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMergeWithGit\SplitAndMerge\ImageProcessing\MergeOperation.cpp(42,52): error C3867: "MergeOperation::merges": Keine Standardsyntax; "&" zum Erstellen eines Verweises auf das Member verwenden
+C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMergeWithGit\SplitAndMerge\ImageProcessing\MergeOperation.cpp(42,52): error C2568: "[": Auflösung der Funktionsüberladung nicht möglich
+C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMergeWithGit\SplitAndMerge\ImageProcessing\MergeOperation.cpp(43,63): error C2597: Ungültiger Verweis auf nicht-statischen Member "MergeOperation::merges"
+C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMergeWithGit\SplitAndMerge\ImageProcessing\MergeOperation.cpp(43,63): error C3867: "MergeOperation::merges": Keine Standardsyntax; "&" zum Erstellen eines Verweises auf das Member verwenden
+C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMergeWithGit\SplitAndMerge\ImageProcessing\MergeOperation.cpp(43,63): error C2568: "[": Auflösung der Funktionsüberladung nicht möglich
   Point.cpp
-  Region.cpp
   Splitoperation.cpp
   Code wird generiert...
-  SplitAndMerge.vcxproj -> C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMerge\x64\Debug\SplitAndMerge.exe

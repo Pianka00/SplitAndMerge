@@ -13,13 +13,15 @@ class Region
 		int xDiff = xEnd - xStart;
 		int yDiff = yEnd - yStart;
 		double mean = 0;
+		int regionId = 0;
 
 
 		Image* image;
 
 
 		void Coloring(Image* mask);
-
+		int regionID();
+		void setRegionID(int id);
 
 		
 

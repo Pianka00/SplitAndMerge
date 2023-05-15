@@ -12,6 +12,7 @@ Region::Region(int xStart, int xEnd, int yStart, int yEnd, Image* image)
 
 Region::~Region()
 {
+	
 
 }
 
@@ -41,4 +42,14 @@ void Region::Coloring(Image* splitMask)
 			splitMask->Set(i, j, rand()%255, rand()%255, rand()%255);  // Annahme: color ist der Farbwert, um die Region einzufärben.
 		}
 	}
+}
+
+int Region::regionID()
+{
+	return regionId;
+}
+
+void Region::setRegionID(int RegionId)
+{
+	regionId = RegionId;
 }
