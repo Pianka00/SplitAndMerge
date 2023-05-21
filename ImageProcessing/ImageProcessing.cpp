@@ -60,7 +60,7 @@ void ImageProcessing::SplitAndMerge(int minsize, double splitThreshold, double m
 		region = waitingQueue.front();
 		waitingQueue.pop();
 
-		if (region-> berechneMittelwert(rawImage) < splitThreshold || (region->xEnd * region->yEnd) < minsize) 
+		if (region-> berechneStandardabweichung(rawImage,region -> berechneMittelwert(rawImage)) < splitThreshold || (region->xEnd * region->yEnd < minsize))
 		{
 			//nicht split, da zu klein oder homogen
 			regionQueue.push_back(region);

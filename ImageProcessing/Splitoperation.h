@@ -6,7 +6,7 @@
 class Splitoperation
 {
 public:
-	static void split(Region* region, std::list<Region*> subregions); //static, damit keine extra Objekt der Klasse erstellt werden muss 
+	static void split(Region* region, std::list<Region*>& subregions); //static, damit keine extra Objekt der Klasse erstellt werden muss 
 																	  //-> Konstruktor nicht nötig
 };
 

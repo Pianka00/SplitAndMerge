@@ -28,7 +28,23 @@ int Region::berechneMittelwert(Image rawImage)	// Laufzeit von O(n^2)
 			
 		}
 	}
-	return summeMittelwert / (xDiff * yDiff);
+	return summeMittelwert / (xEnd*yEnd);
+
+}
+
+int Region::berechneStandardabweichung(Image rawImage, int summeMittelwert)	// Laufzeit von O(n^2)
+{
+
+	int summeStandardabweichung = 0;
+	for (int i = 0; i < xEnd; i++)
+	{
+		for (int j = 0; j < yEnd; j++)
+		{
+			int pixelWert = rawImage.At(i, j);
+			summeStandardabweichung = summeStandardabweichung + pow((pixelWert - summeMittelwert),2);
+		}
+	}
+	return sqrt(summeStandardabweichung/(xEnd*yEnd));
 
 }
 

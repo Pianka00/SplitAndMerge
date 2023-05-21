@@ -1,0 +1,11 @@
+﻿  ImageProcessing.cpp
+C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMergeWithGit\SplitAndMerge\ImageProcessing\ImageProcessing.cpp(95,47): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
+C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMergeWithGit\SplitAndMerge\ImageProcessing\ImageProcessing.cpp(105,15): warning C4456: Deklaration von "region" blendet vorherige lokale Deklaration aus
+C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMergeWithGit\SplitAndMerge\ImageProcessing\ImageProcessing.cpp(54,10): message : Siehe Deklaration von "region"
+C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMergeWithGit\SplitAndMerge\ImageProcessing\ImageProcessing.cpp(49,17): warning C4101: "splitOp": Unreferenzierte lokale Variable
+  Code wird generiert.
+  2 of 504 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Codegenerierung ist abgeschlossen.
+  SplitAndMerge.vcxproj -> C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMergeWithGit\SplitAndMerge\x64\Release\SplitAndMerge.exe

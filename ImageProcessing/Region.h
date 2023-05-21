@@ -27,6 +27,7 @@ class Region
 
 
 	int berechneMittelwert(Image rawImage);
+	int berechneStandardabweichung(Image rawImage, int summeMittelwert);
 
 };
 

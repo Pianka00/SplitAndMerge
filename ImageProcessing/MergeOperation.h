@@ -10,7 +10,7 @@ class MergeOperation
 
 
 public:
-	static void Merge(Region* first, Region* neighbor, int mergeThreshold);
+	void Merge(Region* first, Region* neighbor, int mergeThreshold);
 	void Fill(Image* image);
 };
 
