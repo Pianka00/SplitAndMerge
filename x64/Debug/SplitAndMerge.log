@@ -1,2 +1,6 @@
-﻿  Splitoperation.cpp
+﻿  ImageProcessing.cpp
+C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMergeWithGit\SplitAndMerge\ImageProcessing\ImageProcessing.cpp(89,13): warning C4244: "Initialisierung": Konvertierung von "double" in "int", möglicher Datenverlust
+C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMergeWithGit\SplitAndMerge\ImageProcessing\ImageProcessing.cpp(91,38): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMergeWithGit\SplitAndMerge\ImageProcessing\ImageProcessing.cpp(93,39): warning C4018: "<": Konflikt zwischen "signed" und "unsigned"
+C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMergeWithGit\SplitAndMerge\ImageProcessing\ImageProcessing.cpp(111,47): warning C4244: "Argument": Konvertierung von "double" in "int", möglicher Datenverlust
   SplitAndMerge.vcxproj -> C:\Users\Bianc\OneDrive\Bianca\Hochschule\Kurse\6. Semester\Med Bildverarbietung\Labor\Versuch 1\SplitAndMerge\SplitAndMergeWithGit\SplitAndMerge\x64\Debug\SplitAndMerge.exe

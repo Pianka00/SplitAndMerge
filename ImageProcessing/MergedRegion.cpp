@@ -14,6 +14,7 @@ MergedRegion::MergedRegion(int mergedRegionIdent)
 void MergedRegion::AddRegion(Region* region)
 {
 	subregions.push_back(region);
+	region->setRegionID(regionIdent);
 }
 
 
@@ -43,17 +44,17 @@ void MergedRegion::Fill(Image* image)
 
 	for (Region* subRegion : subregions)
 	{
-		subMean = subMean + subRegion->mean;
-		sum = sum + subRegion-> xEnd;
+		subMean = subMean + (subRegion->mean * subRegion->xDiff); //Mittelwert aller subregions zusammen
+		sum = sum + subRegion-> xDiff;
 	}
 	mean = subMean / sum;
 
 	int pixelvalue = (int)mean;
 
-	//for (Region* subregion : subregions)
-	//{
-	//	subregion->Fill(image, pixelvalue);
-	//}
+	for (Region* subregion : subregions)
+	{
+		subregion->Coloring(image, pixelvalue);
+	}
 }
 
 int MergedRegion::ReturnRegionIdent()

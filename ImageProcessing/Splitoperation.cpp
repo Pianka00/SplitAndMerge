@@ -1,26 +1,25 @@
-#include <list>
+#include <queue>
 #include "Splitoperation.h"
 #include "Region.h"
 
 
 
-void Splitoperation::split(Region* region, std::list<Region*>& subregions)
+void Splitoperation::split(Region* region, std::queue<Region*>& subregions)
 {
-    const int rows = region->xEnd;
-    const int cols = region->yEnd;
-    const int mid_row = rows / 2;
-    const int mid_col = cols / 2;
+
+    const int mid_row = region->yDiff / 2;
+    const int mid_col = region->xDiff / 2;
 
     // Teilbilder erstellen
-    Region* topleft = new Region (0, mid_col, 0,  mid_row, region->image);
-    Region* topright = new Region (mid_col, cols, mid_col, mid_row, region->image);
-    Region* bottomleft = new Region (mid_row, mid_col,mid_row, rows, region->image);
-    Region* bottomright = new Region (mid_col, cols, mid_col, rows , region->image);
+    Region* topleft = new Region (region->xStart, region->xStart+mid_col, region->yStart, region->yStart+mid_row, region->image);
+    Region* topright = new Region (region->xStart+mid_col, region->xEnd,region->yStart, region->yStart+mid_row, region->image);
+    Region* bottomleft = new Region (region->xStart, region->xStart+ mid_col,region->yStart+mid_row, region->yEnd, region->image);
+    Region* bottomright = new Region (region->xStart + mid_col, region->xEnd, region->yStart + mid_row, region->yEnd, region->image);
 
-    subregions.push_back(topleft);
-    subregions.push_back(topright);
-    subregions.push_back(bottomleft);
-    subregions.push_back(bottomright);
+    subregions.push(topleft);
+    subregions.push(topright);
+    subregions.push(bottomleft);
+    subregions.push(bottomright);
 }
 
 

@@ -1,5 +1,6 @@
 #include "Region.h"
 #include "Point.h"
+#include <iostream>
 
 Region::Region(int xStart, int xEnd, int yStart, int yEnd, Image* image)
 {
@@ -8,54 +9,73 @@ Region::Region(int xStart, int xEnd, int yStart, int yEnd, Image* image)
 	this->yStart = yStart;
 	this->yEnd = yEnd;
 	this->image = image;
+	this->xDiff = xEnd - xStart;
+	this->yDiff = yEnd - yStart;
+	calculate();
+}
+
+Region::Region()
+{
+	calculate();
 }
 
 Region::~Region()
 {
-	
 
 }
 
-int Region::berechneMittelwert(Image rawImage)	// Laufzeit von O(n^2)
+void Region::calculate()	// Laufzeit von O(n^2)
 {
-
-	int summeMittelwert = 0;
-	for (int i = 0; i < xEnd; i++)
+	int numPix = xDiff * yDiff;
+	int sum = 0;
+	for (unsigned int i = 0; i < xDiff; i++)
 	{
-		for (int j = 0; j < yEnd; j++) 
+		for (unsigned int j = 0; j < yDiff; j++)
 		{
-			summeMittelwert = summeMittelwert+ rawImage.At(i, j);
-			
+			int pixelValue = image->At(xStart + i, yStart + j);
+			sum = sum + pixelValue;
 		}
 	}
-	return summeMittelwert / (xEnd*yEnd);
+	mean = sum /numPix;
 
-}
+	sum = 0;
 
-int Region::berechneStandardabweichung(Image rawImage, int summeMittelwert)	// Laufzeit von O(n^2)
-{
-
-	int summeStandardabweichung = 0;
-	for (int i = 0; i < xEnd; i++)
+	for (unsigned int i = 0; i < xDiff; i++)
 	{
-		for (int j = 0; j < yEnd; j++)
+		for (unsigned int j = 0; j < yDiff; j++)
 		{
-			int pixelWert = rawImage.At(i, j);
-			summeStandardabweichung = summeStandardabweichung + pow((pixelWert - summeMittelwert),2);
+			int pixelWert = image->At(xStart + i, yStart +j);
+			sum = sum + pow((pixelWert - mean),2);
 		}
 	}
-	return sqrt(summeStandardabweichung/(xEnd*yEnd));
+	standardDeviation =  sqrt(sum/numPix);
 
 }
 
-void Region::Coloring(Image* splitMask)
+void Region::Coloring(Image* splitMask, int value)
 {
-	//Region durchgehen und jeden Pixel färben
+	if (splitMask->IsColorImage())
+	{
+		//Region durchgehen und jeden Pixel färben
+		int r = rand() % 255;
+		int g = rand() % 255;
+		int b = rand() % 255;
 
-	for (int i = xStart; i < xStart + xDiff; ++i) {
-		for (int j = yStart; j < yStart + yDiff; ++j) {
-			// Einfärbung der Pixel in der Maske
-			splitMask->Set(i, j, rand()%255, rand()%255, rand()%255);  // Annahme: color ist der Farbwert, um die Region einzufärben.
+		for (unsigned int x = xStart; x < xEnd; x++) {
+			for (unsigned int y = yStart; y < yEnd; y++) {
+				// Einfärbung der Pixel in der Maske
+				splitMask->Set(x, y, r, g, b);
+			}
+		}
+	}
+	else
+	{
+		for (unsigned int x = xStart; x < xEnd; x++)
+		{
+			for (unsigned int y = yStart; y < yEnd; y++)
+			{
+				splitMask->Set(x, y, value);
+			}
 		}
 	}
 }

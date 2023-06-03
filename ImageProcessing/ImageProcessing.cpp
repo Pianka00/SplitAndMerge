@@ -45,11 +45,10 @@ void ImageProcessing::SplitAndMerge(int minsize, double splitThreshold, double m
 
 	// Initialisiere eine Region-Queue mit der gesamten Bildgröße
 	
-
-	Splitoperation splitOp;
-	list<Region*> regionQueue;
 	queue<Region*> waitingQueue;
-	list<Region*> subregions;
+	list<Region*> regionList;
+	queue<Region*> subregions;
+	list<Region*> processList;
 
 	Region* region = new  Region(0 ,cols, 0, rows, &rawImage);
 
@@ -60,27 +59,44 @@ void ImageProcessing::SplitAndMerge(int minsize, double splitThreshold, double m
 		region = waitingQueue.front();
 		waitingQueue.pop();
 
-		if (region-> berechneStandardabweichung(rawImage,region -> berechneMittelwert(rawImage)) < splitThreshold || (region->xEnd * region->yEnd < minsize))
+		if (region->standardDeviation< splitThreshold || (min(region->xDiff, region->yDiff)/2) < minsize)
 		{
 			//nicht split, da zu klein oder homogen
-			regionQueue.push_back(region);
+			regionList.push_back(region);
 		}
 		else 
 		{
 			//split
 
-			Splitoperation::split(region, subregions);
+			Splitoperation::split(region, waitingQueue);
 
-			for (Region* subregion : subregions) // Liste "subregions" durchlaufen und jedem Element als subregion deklarieren
-				waitingQueue.push(subregion);
+			//for (Region* subregion : subregions) // Liste "subregions" durchlaufen und jedem Element als subregion deklarieren
+			//	waitingQueue.push(subregion);
 
 		}
 	}
 	
 	Image splitMask(rawImage.Rows(), rawImage.Cols());
 	//befüllen.....
-	for (Region* filler : regionQueue) //jede Region der Liste regionQueue bekommt eine eigene Farbe im Maskenbild "splitMask"
-		filler-> Coloring(&splitMask);
+	 
+	while (!regionList.empty())
+	{
+		Region* r = regionList.front();
+		processList.push_back(r);
+		regionList.pop_front();
+
+		r->calculate();
+		int value = r->mean;
+
+		for (unsigned int x = r->xStart; x < r->xEnd; x++)
+		{
+			for (unsigned int y = r->yStart; y < r->yEnd; y++)
+			{
+				splitMask.Set(x, y, value);
+			}
+		}
+	}
+
 	ShowImage("Split-Image", splitMask);
 	
 
@@ -88,9 +104,9 @@ void ImageProcessing::SplitAndMerge(int minsize, double splitThreshold, double m
 	/***** Merge durchführen *****/
 	MergeOperation merging;
 
-	for (Region* fristRegion : regionQueue)
+	for (Region* fristRegion : processList)
 	{
-		for (Region* neighborRegion : regionQueue)
+		for (Region* neighborRegion : processList)
 		{
 			merging.Merge(fristRegion, neighborRegion, mergeThreshold);
 		}
@@ -102,7 +118,7 @@ void ImageProcessing::SplitAndMerge(int minsize, double splitThreshold, double m
 	merging.Fill(&mergeMask);
 
 	//nicht-gemergeten Regionen 
-	for (Region* region : regionQueue)
+	for (Region* region : processList)
 	{
 		if (region->regionID() == 0)
 		{
